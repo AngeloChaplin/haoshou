@@ -3,8 +3,8 @@ import requests
 import datetime
 import base64
 
-# ==== GitHub 配置（从环境变量中获取 token）====
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN_SAFE")  # ✅ 使用 GitHub Secrets 注入
+# ==== GitHub 配置 ====
+GITHUB_TOKEN = os.getenv("MY_GITHUB_TOKEN_haoshou")  # ✅ 使用环境变量
 REPO_OWNER = "BorgJennings"
 REPO_NAME = "BorgJennings"
 BRANCH = "main"
@@ -31,7 +31,7 @@ if res.status_code == 200:
 else:
     content = "❌ 无法获取 Binance 数据"
 
-# ==== 获取 GitHub 文件 SHA（如已存在）====
+# ==== 获取 GitHub 文件 SHA ====
 get_file_api = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/contents/{file_path}"
 res_get = requests.get(get_file_api, headers=HEADERS)
 
