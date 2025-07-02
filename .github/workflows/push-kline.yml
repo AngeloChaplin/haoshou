@@ -22,5 +22,5 @@ jobs:
 
       - name: Run script
         env:
-          GITHUB_TOKEN_SAFE: ${{ secrets.GITHUB_TOKEN_SAFE }}
-        run: python script.py
+          MY_GITHUB_TOKEN_haoshou: ${{ secrets.MY_GITHUB_TOKEN_haoshou }}
+        run: python scripthao.py
